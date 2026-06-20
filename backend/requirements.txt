@@ -3,10 +3,13 @@ async-timeout==3.0.1
 attrs==26.1.0
 chardet==3.0.4
 dacite==1.6.0
+dotenv==0.9.9
 idna==3.18
 multidict==6.7.1
 pcpartpicker==2.2.2
 propcache==0.5.2
+psycopg2==2.9.12
 py-moneyed==0.8.0
+python-dotenv==1.2.2
 typing_extensions==4.15.0
 yarl==1.24.2
