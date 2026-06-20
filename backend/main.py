@@ -1,4 +1,4 @@
-from services.user_service import create_user
+from services.user_service import register_account, delete_account
 
 def main():
     print("-------WELCOME TO THE PC PARTS EXPLORER-------\n")
@@ -19,7 +19,7 @@ def main():
         pass
 
     elif choice == 4:
-        # delete_account()
+        delete_user()
         pass
 
     else:
@@ -27,12 +27,18 @@ def main():
 
 
 def register_user():
-    print("-------REGISTER-------\n")
+    print("-------REGISTER ACCOUNT-------\n")
     username = input("Enter your username:")
     email = input("Enter your email:")
     full_name = input("Enter your full name:")
     password = input("Enter your password:")
-    create_user(username, email, full_name, password)
+    register_account(username, email, full_name, password)
+
+def delete_user():
+    print("-------DELEETE ACCOUNT-------\n")
+    username = input("Enter your username:")
+    password = input("Enter your password:")
+    delete_account(username, password)
 
 
 main()
