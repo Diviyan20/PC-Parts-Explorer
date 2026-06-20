@@ -1,7 +1,7 @@
-from models.users import insert_user
+from models.users import insert_user, delete_user
 from utils.validators import validate_string
 
-def create_user(username, email, full_name, password):
+def register_account(username, email, full_name, password):
     try:
         validate_string(username)
         validate_string(full_name)
@@ -11,4 +11,16 @@ def create_user(username, email, full_name, password):
         return record
     
     except Exception as e:
-        print("Failed to create new user:", e)
+        raise ValueError("Failed to create new user:", e)
+
+def delete_account(username, password):
+    try:
+        validate_string(username)
+        validate_string(password)
+
+        record = delete_user(username, password)
+        print(f"User {username} has been deleted.")
+        return record
+
+    except Exception as e:
+        raise ValueError("Failed to delete user:", e)
