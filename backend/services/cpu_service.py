@@ -39,12 +39,13 @@ def transform_cpu_data():
             "brand": cpu_brand,
             "model": cpu_model,
             "cores": cpu_cores,
-            "base_clock": f"{base_clock} GHz",
-            "boost_clock": f"{boost_clock} GHz",
+            "base_clock": f"{base_clock}",
+            "boost_clock": f"{boost_clock}",
             "tdp": cpu_tdp,
             "integrated_graphics": integrated_graphics,
             "multithreading": multithreading,
-            "price": f"{currency} {price}"
+            "currency": currency,
+            "price": price
         })
         
         print("Components:", components)
