@@ -1,7 +1,6 @@
 from pcpartpicker import API
 
-api = API()
-
-cpu_data = api.retrieve("cpu").to_json()
-
-print("Data: ", cpu_data)
+def fetch_cpu_data():
+    api = API()
+    cpu_data = api.retrieve("cpu").to_json()
+    return cpu_data
