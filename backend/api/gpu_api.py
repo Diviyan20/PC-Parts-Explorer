@@ -1,7 +1,6 @@
 from pcpartpicker import API
 
-api = API()
-
-gpu_data = api.retrieve("video-card").to_json()
-
-print("Data: ", gpu_data)
+def fetch_gpu_data():
+    api = API()
+    gpu_data = api.retrieve("video-card").to_json()
+    return gpu_data
