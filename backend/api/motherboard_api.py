@@ -1,7 +1,7 @@
 from pcpartpicker import API
 
-api = API()
+def fetch_motherboard_data():
+    api = API()
 
-motherboard_data = api.retrieve("motherboard").to_json()
-
-print("Data: ", motherboard_data)
+    motherboard_data = api.retrieve("motherboard").to_json()
+    return motherboard_data
