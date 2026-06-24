@@ -7,10 +7,11 @@ import json
 """
 
 def transform_gpu_data():
-    response = fetch_gpu_data()
-    
-    data = json.loads(response)
     try:
+        response = fetch_gpu_data()
+        data = json.loads(response)
+
+        specs = []
     
         for gpu_data in data['video-card']:
             brand = gpu_data['brand']
@@ -27,8 +28,8 @@ def transform_gpu_data():
             currency = gpu_data['price'][0] if gpu_data['price'] else None
             price = gpu_data['price'][1] if gpu_data['price'] else None
             
-            components = []
-            components.append({
+            
+            specs.append({
                 "brand": brand,
                 "model": model,
                 "chipset": chipset,
@@ -41,9 +42,10 @@ def transform_gpu_data():
                 "price": price
             })
             
-            print("GPU Components: ", components)
+        formatted_specs = json.dumps(specs, indent=2)
+        print("GPU Components: ", formatted_specs)
         
-        return components
+        return formatted_specs
     
     except Exception as e:
         raise ValueError("Error cleaning Data:", e)
